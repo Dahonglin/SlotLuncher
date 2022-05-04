@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     data() {
       return {
         title: "Slot Luncher",
-        sub: "오늘 점심 뭐 먹지?",
+        sub: "오늘 점심 뭐 먹지❓",
         nav: "🍔🥙🍛🥐🍝🍕🍣🍱",
         menu: [
           "라면",
@@ -22,7 +22,8 @@ window.addEventListener("load", () => {
           "짜장면",
           "덮밥",
           "떡만두국",
-          "샌드위치"
+          "샌드위치",
+          "떡볶이"
         ],
         inputMenu: "",
         picked: "",
