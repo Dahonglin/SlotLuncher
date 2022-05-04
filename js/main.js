@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
         title: "Slot Luncher",
         sub: "오늘 점심 뭐 먹지❓",
         nav: "🍔🥙🍛🥐🍝🍕🍣🍱",
+        close: "다시 고를래!",
         // 기본 데이터 세팅
         menu: [
           "라면",
@@ -31,7 +32,9 @@ window.addEventListener("load", () => {
         // 임의 이전 랜덤값
         prePicked: 999,
         // 모달창 열기/닫기
-        resultPopup: 0
+        resultPopup: 0,
+        //다시 고를래 카운트
+        rePicked: 0
       };
     }, //data
     methods: {
@@ -61,8 +64,8 @@ window.addEventListener("load", () => {
           // 중복이 없으면
           if (chk)
             this.menu.push(this.inputMenu);
-            localStorage.setItem('menu',JSON.stringify(this.menu));
-        } 
+          localStorage.setItem('menu', JSON.stringify(this.menu));
+        }
         // 빈칸 입력 시 반응 없음
         else {
           return false;
@@ -87,28 +90,37 @@ window.addEventListener("load", () => {
       //창닫기
       closeWindow(val) {
         this.resultPopup = val;
+        this.rePicked++;
+        //계속 다시 고를래 누를 시
+        if (this.rePicked > 5 == this.rePicked < 10) {
+          this.close = "이젠 골라줘...😅";
+        } else if (this.rePicked > 10) {
+          this.close = "골라라 쫌!😈";
+        }
+        console.log(this.rePicked);
       },
       // 메뉴 삭제
       deleteMenu(val) {
         if (val > -1) {
           this.menu.splice(val, 1);
-          localStorage.setItem('menu',JSON.stringify(this.menu));
+          localStorage.setItem('menu', JSON.stringify(this.menu));
         }
       }
-    },//methods
-    mounted () {
+    }, //methods
+    mounted() {
+
       // 기존 로컬 데이터 불러오기
       const savedData = localStorage.getItem('menu');
 
       // 로컬 데이터가 있을 경우 불러옴
-      if(savedData !== null) {
+      if (savedData !== null) {
         // 기존 로컬 데이터 저장
         const parsedMenu = JSON.parse(savedData);
         // menu에 기존 데이터 저장함
         this.menu = parsedMenu;
       }
       // 로컬 데이터가 아무것도 없을 경우 기존에 있던 초기화 배열 데이터로 세팅함.
-    }//mounted
+    } //mounted
   }); //뷰
 
   // 로컬데이터삭제
