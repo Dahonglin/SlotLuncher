@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px;
+}
+
 ul {
     float: left;
     display: flex;
@@ -31,7 +35,7 @@ button {
 }
 #container {
     display: flex;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
@@ -67,4 +71,22 @@ button {
     display: grid;
     align-content: center;
     justify-content: center;
+}
+
+
+
+/******** 900px 이하 미디어쿼리 ********/
+@media screen and (max-width:900px) {
+    #container {
+        width: 90%;
+    }
+    #inbx {
+        width: 80%;
+    }
+
+    .white_bg {
+        width: 80vw;
+        height: 30vh;
+    }
+
 }
