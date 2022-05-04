@@ -53,12 +53,12 @@
               @click="deleteMenu(idx)">{{menu}}</button>
           </li>
         </ul>
-        <label class="control-label">땡기는 메뉴 더 추가하기</label>
+        <label class="control-label">메뉴 더 추가하기</label>
         <div id="input">
           <input type="text" class="form-control" id="floatingInput" v-model="inputMenu" @keyup.enter="addNewMenu">
           <button type='submit' @click="addNewMenu" class="btn btn-success">추가</button>
         </div>
-        <button class="btn btn-danger btn-lg" @click="slotMenu">🚀 Go lunch!</button>
+        <button class="btn btn-danger btn-lg" @click="slotMenu">🚀 New-clear Lunch Detected!</button>
       </div>
     </div>
   </div>
