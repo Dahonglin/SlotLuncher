@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .slide-box {
+            margin: 0;
+            padding: 0;
+            width: 50px;
+            height: 250px;
+            animation: slide .5s infinite,
+            disappear .5s 1s forwards;
+        }
+
+        .slide-box li {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid #000;
+        }
+
+        @keyframes slide {
+            0% {
+                margin-top: 0;
+            }
+
+            20% {
+                margin-top: -50px;
+            }
+
+            40% {
+                margin-top: -100px;
+            }
+
+            60% {
+                margin-top: -150px;
+            }
+
+            80% {
+                margin-top: -200px;
+            }
+
+            100% {
+                margin-top: -250px;
+            }
+        }
+
+        @keyframes disappear {
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="slide-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+
+</html>
