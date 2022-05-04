@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
         title: "Slot Luncher",
         sub: "오늘 점심 뭐 먹지❓",
         nav: "🍔🥙🍛🥐🍝🍕🍣🍱",
+        // 기본 데이터 세팅
         menu: [
           "라면",
           "피자",
@@ -60,6 +61,7 @@ window.addEventListener("load", () => {
           // 중복이 없으면
           if (chk)
             this.menu.push(this.inputMenu);
+            localStorage.setItem('menu',JSON.stringify(this.menu));
         } 
         // 빈칸 입력 시 반응 없음
         else {
@@ -90,10 +92,25 @@ window.addEventListener("load", () => {
       deleteMenu(val) {
         if (val > -1) {
           this.menu.splice(val, 1);
+          localStorage.setItem('menu',JSON.stringify(this.menu));
         }
       }
-    }//methods
+    },//methods
+    mounted () {
+      // 기존 로컬 데이터 불러오기
+      const savedData = localStorage.getItem('menu');
+
+      // 로컬 데이터가 있을 경우 불러옴
+      if(savedData !== null) {
+        // 기존 로컬 데이터 저장
+        const parsedMenu = JSON.parse(savedData);
+        // menu에 기존 데이터 저장함
+        this.menu = parsedMenu;
+      }
+      // 로컬 데이터가 아무것도 없을 경우 기존에 있던 초기화 배열 데이터로 세팅함.
+    }//mounted
   }); //뷰
 
-  localStorage.clear();
+  // 로컬데이터삭제
+  // localStorage.clear();
 }); //윈도우 로드
