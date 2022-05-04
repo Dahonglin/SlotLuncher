@@ -31,12 +31,12 @@
       <div class="white_bg">
         <h4>🔔 도착한 점심 메뉴는?</h4>
         <div class="resultMenu">
-          <h1>
+          <div>
             <ul>
               <li v-for="(menu, idx) in menu" :key="idx">{{menu}}</li>
             </ul>
-          </h1>
-          <h1>{{picked}}</h1>
+          </div>
+          <div>{{picked}}</div>
         </div>
         <button class="btn btn-danger btn" @click="closeWindow(0)">🚀 다시 고를래!</button>
       </div>
