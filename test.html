@@ -21,7 +21,7 @@
             width: 50px;
             height: 250px;
             animation: slide .5s infinite,
-            disappear .5s 1s forwards;
+                disappear .5s 1s forwards;
         }
 
         .slide-box li {
@@ -68,6 +68,40 @@
             }
         }
     </style>
+
+    <script>
+        //배열 선언
+        var arrValues = ["강아지", "고양이", "기린", "고양이", "사자", "호랑이", "판다", "기린"];
+
+        //값을 담을 배열 선언
+        var arrCheckVal = new Array();
+
+        //중복유무 확인변수
+        var chk = true;
+        //체크할 데이터 확인용 출력
+        console.log(arrValues);
+
+        //배열의 모든 데이터를 확인하기위한 반복문
+        for (var i = 0; i < arrValues.length; i++) {
+
+            //중복유무 초기화
+            chk = true;
+
+            //중복체크
+            //값을 담은 배열을 전체 반복하면서 담을 데이터와 담겨진 데이터를 비교
+            for (value in arrCheckVal) {
+                //중복유무를 체크하여 값을 담을지 말지 결정
+                if (arrCheckVal[value] == arrValues[i]) {
+                    chk = false;
+                }
+            }
+
+            if (chk)
+                arrCheckVal.push(arrValues[i]);
+        }
+        //중복제거하여 담은 배열의 데이터 확인용 출력
+        console.log(arrCheckVal);
+    </script>
 </head>
 
 <body>

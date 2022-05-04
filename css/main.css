@@ -103,61 +103,35 @@ button {
     position: relative;
     z-index: 1;
     background: #fff;
-    animation: slide .5s step-end forwards;
+    animation: slide .3s step-end forwards;
 }
 
 /* 실제 결과값 */
 .resultMenu h1:nth-child(2) {
     position: absolute;
     opacity: 0;
-    animation: appear .5s step-start .5s forwards;
+    animation: appear .5s step-start .3s forwards;
 
 }
 
 /* 슬롯애니 */
 @keyframes slide {
     0% {
-        margin-top: 0;
+        transform: translateY(0);
     }
-
-    10% {
-        margin-top: -50px;
-    }
-
     20% {
-        margin-top: -100px;
+        transform: translateY(-20%);
     }
-
-    30% {
-        margin-top: -150px;
-    }
-
     40% {
-        margin-top: -200px;
+        transform: translateY(-40%);
     }
-
-    50% {
-        margin-top: -250px;
-    }
-
     60% {
-        margin-top: -300px;
+        transform: translateY(-60%);
     }
-
-    70% {
-        margin-top: -350px;
-    }
-
     80% {
-        margin-top: -400px;
+        transform: translateY(-80%);
     }
-
-    90% {
-        margin-top: -450px;
-    }
-
     100% {
-        margin-top: -500px;
         opacity: 0;
     }
 
@@ -165,10 +139,10 @@ button {
 
 @keyframes appear {
 
-    100%{
-     opacity: 1;
+    100% {
+        opacity: 1;
     }
-    
+
 }
 
 
