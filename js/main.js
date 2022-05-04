@@ -1,7 +1,6 @@
 window.addEventListener("load", () => {
   // 로딩 완료
   console.log("로딩 완료");
-
   new Vue({
     el: "#app",
     data() {

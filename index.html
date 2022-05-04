@@ -49,7 +49,8 @@
         <h5>{{nav}}</h5>
         <h6>💡 메뉴 클릭 시 삭제 💡</h6>
         <ul>
-          <li v-for="(menu, idx) in menu" :key="idx"><button class="btn btn-outline-dark" @click="deleteMenu(idx)">{{menu}}</button>
+          <li v-for="(menu, idx) in menu" :key="idx"><button class="btn btn-outline-dark"
+              @click="deleteMenu(idx)">{{menu}}</button>
           </li>
         </ul>
         <label class="control-label">땡기는 메뉴 더 추가하기</label>
