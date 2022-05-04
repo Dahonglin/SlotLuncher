@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
         title: "Slot Luncher",
         sub: "오늘 점심 뭐 먹지❓",
         nav: "🍔🥙🍛🥐🍝🍕🍣🍱",
-        close: "다시 고를래!",
+        close: "🚀 다시 고를래!",
         // 기본 데이터 세팅
         menu: [
           "라면",
@@ -97,7 +97,6 @@ window.addEventListener("load", () => {
         } else if (this.rePicked > 10) {
           this.close = "골라라 쫌!😈";
         }
-        console.log(this.rePicked);
       },
       // 메뉴 삭제
       deleteMenu(val) {
