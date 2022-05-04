@@ -1,4 +1,6 @@
 window.addEventListener("load", () => {
+  // 뷰 개발자도구 사용
+  Vue.config.devtools = true;
   // 로딩 완료
   console.log("로딩 완료");
   new Vue({
@@ -7,7 +9,7 @@ window.addEventListener("load", () => {
       return {
         title: "Slot Luncher",
         sub: "오늘 점심 뭐 먹지?",
-        nav: "🍔🥙🍛🥐🍝🍕🍣☕",
+        nav: "🍔🥙🍛🥐🍝🍕🍣🍱",
         menu: [
           "라면",
           "피자",
@@ -54,14 +56,18 @@ window.addEventListener("load", () => {
               return false;
             }
           }
+          // 중복이 없으면
           if (chk)
             this.menu.push(this.inputMenu);
-        } else {
+        } 
+        // 빈칸 입력 시 반응 없음
+        else {
           return false;
         }
         // 인풋 태그 초기화
         this.inputMenu = "";
       },
+      // 추첨
       slotMenu() {
         this.resultPopup = 1;
         // 랜덤 추첨
@@ -75,6 +81,7 @@ window.addEventListener("load", () => {
         // 추첨 완료
         this.picked = this.menu[random];
       },
+      //창닫기
       closeWindow(val) {
         this.resultPopup = val;
       },
@@ -84,6 +91,8 @@ window.addEventListener("load", () => {
           this.menu.splice(val, 1);
         }
       }
-    }
+    }//methods
   }); //뷰
+
+  localStorage.clear();
 }); //윈도우 로드

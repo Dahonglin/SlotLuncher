@@ -29,7 +29,7 @@
     <!-- 결과값 모달창 -->
     <div class="black_bg" v-if="resultPopup">
       <div class="white_bg">
-        <h4>🔔도착한 점심 메뉴는?</h4>
+        <h4>🔔 도착한 점심 메뉴는?</h4>
         <div class="resultMenu">
           <h1>
             <ul>
@@ -38,7 +38,7 @@
           </h1>
           <h1>{{picked}}</h1>
         </div>
-        <button class="btn btn-danger btn" @click="closeWindow(0)">🚀다시 고를래!</button>
+        <button class="btn btn-danger btn" @click="closeWindow(0)">🚀 다시 고를래!</button>
       </div>
     </div>
     <!-- 메뉴판 -->
@@ -58,7 +58,7 @@
           <input type="text" class="form-control" id="floatingInput" v-model="inputMenu" @keyup.enter="addNewMenu">
           <button type='submit' @click="addNewMenu" class="btn btn-success">추가</button>
         </div>
-        <button class="btn btn-danger btn-lg" @click="slotMenu">🚀Go lunch!</button>
+        <button class="btn btn-danger btn-lg" @click="slotMenu">🚀 Go lunch!</button>
       </div>
     </div>
   </div>
