@@ -62,9 +62,10 @@ window.addEventListener("load", () => {
             }
           }
           // 중복이 없으면
-          if (chk)
+          if (chk) {
             this.menu.push(this.inputMenu);
-          localStorage.setItem('menu', JSON.stringify(this.menu));
+            localStorage.setItem('menu', JSON.stringify(this.menu));
+          }
         }
         // 빈칸 입력 시 반응 없음
         else {
