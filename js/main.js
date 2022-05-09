@@ -41,7 +41,8 @@ window.addEventListener("load", () => {
       // 메뉴 추가
       addNewMenu() {
         // 메뉴 배열에 추가함
-        if (this.inputMenu != '') {
+        let iptMenu = this.inputMenu.trim();
+        if (iptMenu != '') {
           // 중복 체크 부분
 
           //중복 유무
@@ -51,7 +52,7 @@ window.addEventListener("load", () => {
             //중복유무 초기화
             chk = true;
             // 중복된 데이터가 있는지 확인
-            if (this.menu[i] === this.inputMenu) {
+            if (this.menu[i] === iptMenu) {
               console.log('중복됨');
               //중복 경고창 알림
               window.alert('이미 등록 된 메뉴입니다!');
@@ -63,12 +64,13 @@ window.addEventListener("load", () => {
           }
           // 중복이 없으면
           if (chk) {
-            this.menu.push(this.inputMenu);
+            this.menu.push(iptMenu);
             localStorage.setItem('menu', JSON.stringify(this.menu));
           }
         }
         // 빈칸 입력 시 반응 없음
         else {
+          this.inputMenu = "";
           return false;
         }
         // 인풋 태그 초기화
