@@ -48,7 +48,7 @@ URL 접속 시 사용 가능하며, PC & 모바일 상관 없이 이용 가능.
 ---
 
 
-### 🛠 상세 설명  
+### 🛠   
 <pre><code>// 기존 로컬 데이터 불러오기
 const savedData = localStorage.getItem('menu');
 
