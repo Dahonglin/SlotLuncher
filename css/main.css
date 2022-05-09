@@ -55,6 +55,12 @@ button {
     padding-top: 100px;
 }
 
+.resetBtn {
+    cursor: pointer;
+    font-weight: bold;
+    color:rgb(213, 118, 101);
+}
+
 .black_bg {
     display: flex;
     flex-direction: column;

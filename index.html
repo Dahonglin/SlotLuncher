@@ -48,6 +48,7 @@
         <h4>{{sub}}</h4>
         <h5>{{nav}}</h5>
         <h6>💡 메뉴 클릭 시 삭제 💡</h6>
+        <h6 class="resetBtn" @click="resetMenu">📝첫 리스트로 초기화</h6>
         <ul>
           <li v-for="(menu, idx) in menu" :key="idx"><button class="btn btn-outline-dark"
               @click="deleteMenu(idx)">{{menu}}</button>

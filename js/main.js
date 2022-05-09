@@ -93,10 +93,14 @@ window.addEventListener("load", () => {
         this.resultPopup = val;
         this.rePicked++;
         //계속 다시 고를래 누를 시
-        if (this.rePicked > 5 == this.rePicked < 10) {
+        if (this.rePicked > 5 && this.rePicked < 10) {
           this.close = "이젠 골라줘...😅";
-        } else if (this.rePicked > 10) {
+        } else if (this.rePicked > 10 && this.rePicked < 13) {
           this.close = "골라라 쫌!😈";
+          // 13번 이상 다시 시작 시 멘트 초기화
+        } else if (this.rePicked >= 13) {
+          this.close = "🚀 다시 고를래!";
+          this.rePicked = 0;
         }
       },
       // 메뉴 삭제
@@ -105,10 +109,14 @@ window.addEventListener("load", () => {
           this.menu.splice(val, 1);
           localStorage.setItem('menu', JSON.stringify(this.menu));
         }
+      },
+      // 메뉴판 초기화
+      resetMenu() {
+        localStorage.clear();
+        window.location.reload();
       }
     }, //methods
     mounted() {
-
       // 기존 로컬 데이터 불러오기
       const savedData = localStorage.getItem('menu');
 
