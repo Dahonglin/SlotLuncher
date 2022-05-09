@@ -90,12 +90,10 @@ window.addEventListener("load", () => {
           this.prePicked = random;
           // 추첨 완료
           this.picked = this.menu[random];
-        } else if (this.menu.length === 1) {
-          //메뉴가 한개밖에 없을 경우 경고창 출력
-          window.alert('발사가 중지 되었습니다! \n1개의 메뉴로는 발사가 불가능 합니다.');
-          this.inputMenu = "";
-        } else {
-          //메뉴가 아무 것도 없을 경우 경고창 출력
+        } 
+
+        else {
+          //메뉴가 없거나 2개 미만인 경우
           window.alert('발사가 중지 되었습니다! \n메뉴를 추가 하시거나, 첫 리스트로 초기화 해주세요.');
           this.inputMenu = "";
         }
