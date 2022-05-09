@@ -92,7 +92,7 @@ window.addEventListener("load", () => {
           this.picked = this.menu[random];
         } else {
           //메뉴가 아무 것도 없을 경우 경고창 출력
-          window.alert('메뉴 리스트가 비어 있습니다!');
+          window.alert('메뉴가 없어 발사가 중지 되었습니다! \n메뉴를 추가 하시거나, 첫 리스트로 초기화 해주세요.');
         }
       },
       //창닫기
