@@ -78,17 +78,22 @@ window.addEventListener("load", () => {
       },
       // 추첨
       slotMenu() {
-        this.resultPopup = 1;
-        // 랜덤 추첨
-        let random = Math.floor(Math.random() * this.menu.length);
-        // 이전 값과 같으면 다를 때까지 계속 랜덤 수 생성
-        while (random === this.prePicked) {
-          random = Math.floor(Math.random() * this.menu.length);
+        if (this.menu.length > 0) {
+          this.resultPopup = 1;
+          // 랜덤 추첨
+          let random = Math.floor(Math.random() * this.menu.length);
+          // 이전 값과 같으면 다를 때까지 계속 랜덤 수 생성
+          while (random === this.prePicked) {
+            random = Math.floor(Math.random() * this.menu.length);
+          }
+          // 이전 숫자에 현재 랜덤 수 더해줌
+          this.prePicked = random;
+          // 추첨 완료
+          this.picked = this.menu[random];
+        } else {
+          //메뉴가 아무 것도 없을 경우 경고창 출력
+          window.alert('메뉴 리스트가 비어 있습니다!');
         }
-        // 이전 숫자에 현재 랜덤 수 더해줌
-        this.prePicked = random;
-        // 추첨 완료
-        this.picked = this.menu[random];
       },
       //창닫기
       closeWindow(val) {
