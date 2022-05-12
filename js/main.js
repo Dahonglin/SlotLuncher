@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
       // 메뉴 추가
       addNewMenu() {
         // 메뉴 배열에 추가함
-        let iptMenu = this.inputMenu.trim();
+        let iptMenu = this.inputMenu;
         if (iptMenu != '') {
           // 중복 체크 부분
 
